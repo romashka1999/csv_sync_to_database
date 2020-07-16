@@ -110,7 +110,7 @@ const refreshEmployeesTable = async (req) => {
                 reporting.push({ employeeNo , action: REPORTING_ACTIONS.DELETE });
 
                 const employeeIndex = dbEmployees.findIndex(e => e.employeeNo === employeeNo);
-                const employee = dbEmployees[employeeIndex];
+                const employee = dbEmployees[employeeIndex].dataValues;
                 
                 // set employee's isDeleted field to true because it was deleted
                 employee.isDeleted = true;

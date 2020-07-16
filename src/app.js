@@ -6,10 +6,6 @@ const morgan =  require('morgan');
 const dotenv = require('dotenv');
 const fileUpload = require('express-fileupload');
 
-// const fs = require("fs");
-
-
-// const queries = fs.readFileSync('../../../../MOCKDATA/MOCK_DATA.sql').toString().split(/;\n/);
 
 dotenv.config();
 

@@ -8,7 +8,7 @@ const Database = new Sequelize({
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     dialect: "mysql",
-    logging: true
+    logging: false
 });
 
 Database.sync({ force: false });
