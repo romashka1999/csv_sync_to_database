@@ -120,17 +120,16 @@ const refreshEmployeesTable = async (req) => {
 
 
         // console.log('dataForCreateOrUpdate :>> ', dataForCreateOrUpdate);
-
-        // create report file
-        const ws = fs.createWriteStream("./uploads/report.csv");
-        csv.write(reporting, { headers: true })
-           .pipe(ws);
-
     
         // BULK UPSERT (insert or update records)
         if(dataForCreateOrUpdate.length > 0) {
             await Employee.bulkCreate(dataForCreateOrUpdate, { updateOnDuplicate: ['employeeNo'] });
         }
+
+        // create report file
+        const ws = fs.createWriteStream("./uploads/report.csv");
+        csv.write(reporting, { headers: true })
+           .pipe(ws);
 
         return { 
             message: 'employees table was synchronized :)', 

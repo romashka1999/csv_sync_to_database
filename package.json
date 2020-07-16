@@ -19,7 +19,7 @@
     "http-status-codes": "^1.4.0",
     "morgan": "^1.9.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^6.3.3",
+    "sequelize": "^6.3.3"
   },
   "devDependencies": {
     "chalk": "^3.0.0",
