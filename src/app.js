@@ -14,10 +14,12 @@ const { EmployeesController } = require('./api/controllers/employees.controller'
 
 const app = express();
 
+// database authentication
 Database.authenticate()
     .then(() => { console.log("Database connected!")})
-    .catch(() => { console.log('err') });
+    .catch(() => { console.log('Database Error') });
 
+ // set middlewares to express app
 app.use(cors());
 app.use(urlencoded({extended: false}));
 app.use(json());
